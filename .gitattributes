@@ -1,0 +1,29 @@
+# Normalize line endings. Git stores text with LF; on checkout it uses the
+# platform default unless a file type is pinned below. This removes the
+# "LF will be replaced by CRLF" warnings and keeps tooling-sensitive files
+# (YAML, shell scripts) on LF regardless of the contributor's OS.
+
+# Auto-detect text files and normalize to LF in the repository.
+* text=auto eol=lf
+
+# Files that must stay LF (break otherwise on some tools/CI).
+*.yml   text eol=lf
+*.yaml  text eol=lf
+*.sh    text eol=lf
+*.lua   text eol=lf
+*.json  text eol=lf
+*.ts    text eol=lf
+*.tsx   text eol=lf
+*.js    text eol=lf
+*.css   text eol=lf
+*.html  text eol=lf
+*.md    text eol=lf
+
+# Binary assets — never touch line endings.
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.webp  binary
+*.wasm  binary
+*.ico   binary

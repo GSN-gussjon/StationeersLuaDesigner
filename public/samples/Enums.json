@@ -1,0 +1,47 @@
+{
+  "scriptEnums": {
+    "LogicType": {
+      "enumName": "LogicType",
+      "values": {
+        "Power": { "value": 0, "deprecated": false, "description": "Power state" },
+        "Open": { "value": 1, "deprecated": false, "description": "Open state" },
+        "Mode": { "value": 2, "deprecated": false, "description": "Mode" },
+        "Error": { "value": 3, "deprecated": false, "description": "Error flag" },
+        "Pressure": { "value": 5, "deprecated": false, "description": "Pressure kPa" },
+        "Temperature": { "value": 6, "deprecated": false, "description": "Temperature K" },
+        "On": { "value": 12, "deprecated": false, "description": "On/off" },
+        "RequiredPower": { "value": 14, "deprecated": false, "description": "Required power W" },
+        "Setting": { "value": 16, "deprecated": false, "description": "Setting" },
+        "NameHash": { "value": 90, "deprecated": false, "description": "Name hash" },
+        "PrefabHash": { "value": 91, "deprecated": false, "description": "Prefab hash" }
+      }
+    },
+    "LogicSlotType": {
+      "enumName": "LogicSlotType",
+      "values": {
+        "Occupied": { "value": 1, "deprecated": false, "description": "Slot occupied" },
+        "Quantity": { "value": 4, "deprecated": false, "description": "Stack quantity" },
+        "PrefabHash": { "value": 20, "deprecated": false, "description": "Item prefab hash" }
+      }
+    },
+    "LogicBatchMethod": {
+      "enumName": "LogicBatchMethod",
+      "values": {
+        "Average": { "value": 0, "deprecated": false, "description": "Average" },
+        "Sum": { "value": 1, "deprecated": false, "description": "Sum" },
+        "Minimum": { "value": 2, "deprecated": false, "description": "Minimum" },
+        "Maximum": { "value": 3, "deprecated": false, "description": "Maximum" }
+      }
+    },
+    "LogicReagentMode": {
+      "enumName": "LogicReagentMode",
+      "values": {
+        "Contents": { "value": 0, "deprecated": false, "description": "Contents" },
+        "Required": { "value": 1, "deprecated": false, "description": "Required" },
+        "Recipe": { "value": 2, "deprecated": false, "description": "Recipe" },
+        "TotalContents": { "value": 3, "deprecated": false, "description": "Total contents" }
+      }
+    }
+  },
+  "basicEnums": {}
+}

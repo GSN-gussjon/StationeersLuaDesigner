@@ -1,0 +1,93 @@
+{
+  "version": "sample-0.1",
+  "pages": [
+    {
+      "Key": "StructureBench",
+      "Title": "Powered Bench",
+      "Description": "Sample entry for testing the simulator.",
+      "PrefabName": "StructureBench",
+      "PrefabHash": -2042448192,
+      "Slots": [],
+      "LogicInfo": {
+        "LogicTypes": {
+          "On": "ReadWrite",
+          "Power": "Read",
+          "RequiredPower": "Read",
+          "Error": "Read",
+          "NameHash": "Read",
+          "PrefabHash": "Read"
+        },
+        "LogicSlotTypes": {}
+      }
+    },
+    {
+      "Key": "StructureGasSensor",
+      "Title": "Gas Sensor",
+      "Description": "Sample entry for testing the simulator.",
+      "PrefabName": "StructureGasSensor",
+      "PrefabHash": -1252983604,
+      "Slots": [],
+      "LogicInfo": {
+        "LogicTypes": {
+          "On": "ReadWrite",
+          "Temperature": "Read",
+          "Pressure": "Read",
+          "Error": "Read",
+          "NameHash": "Read",
+          "PrefabHash": "Read"
+        },
+        "LogicSlotTypes": {}
+      }
+    },
+    {
+      "Key": "StructureWallLight",
+      "Title": "Wall Light",
+      "Description": "Sample entry for testing the simulator.",
+      "PrefabName": "StructureWallLight",
+      "PrefabHash": -1860064656,
+      "Slots": [],
+      "LogicInfo": {
+        "LogicTypes": {
+          "On": "ReadWrite",
+          "Setting": "ReadWrite",
+          "Power": "Read",
+          "Error": "Read"
+        },
+        "LogicSlotTypes": {}
+      }
+    },
+    {
+      "Key": "StructureBatteryLarge",
+      "Title": "Station Battery (Large)",
+      "Description": "Sample entry with a slot for testing slot logic.",
+      "PrefabName": "StructureBatteryLarge",
+      "PrefabHash": -1388288459,
+      "Slots": [
+        { "SlotClass": "Battery", "StringHash": 0, "StringKey": "battery", "SlotName": "Battery" }
+      ],
+      "LogicInfo": {
+        "LogicTypes": {
+          "On": "ReadWrite",
+          "Mode": "Read",
+          "Setting": "Read",
+          "Error": "Read"
+        },
+        "LogicSlotTypes": {
+          "0": {
+            "Occupied": "Read",
+            "Quantity": "Read",
+            "PrefabHash": "Read"
+          }
+        }
+      }
+    }
+  ],
+  "core_prefabs": [],
+  "reagents": {
+    "Iron": { "Id": 0, "Hash": -1841632400, "Unit": "g", "IsOrganic": false },
+    "Gold": { "Id": 1, "Hash": -1108710267, "Unit": "g", "IsOrganic": false },
+    "Copper": { "Id": 2, "Hash": 1058547521, "Unit": "g", "IsOrganic": false }
+  },
+  "scriptCommands": {},
+  "scriptConstants": {}
+}
