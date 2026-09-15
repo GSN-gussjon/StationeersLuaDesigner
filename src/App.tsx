@@ -352,15 +352,49 @@ function ConsolePane() {
   );
 }
 
-function DevicesPane() {
+function DevicesPane({
+  collapsed,
+  onToggle,
+}: {
+  collapsed: boolean;
+  onToggle: () => void;
+}) {
   const { state, dispatch } = useStore();
   const [adding, setAdding] = useState(false);
   const canAdd = state.catalog !== null;
 
+  if (collapsed) {
+    return (
+      <aside className="pane pane--devices pane--devices-collapsed">
+        <div className="pane-header">
+          <button
+            className="pane-collapse-btn"
+            title="Expand Devices panel"
+            aria-label="Expand Devices panel"
+            onClick={onToggle}
+          >
+            ◀
+          </button>
+          <span className="pane--devices-collapsed__label">Devices</span>
+        </div>
+      </aside>
+    );
+  }
+
   return (
     <aside className="pane pane--devices">
       <div className="pane-header">
-        <span>Devices</span>
+        <div className="pane-header__left">
+          <button
+            className="pane-collapse-btn"
+            title="Collapse Devices panel"
+            aria-label="Collapse Devices panel"
+            onClick={onToggle}
+          >
+            ▶
+          </button>
+          <span>Devices</span>
+        </div>
         <div className="toolbar">
           <StateIO />
           <button
@@ -413,13 +447,34 @@ function DevicesPane() {
   );
 }
 
+const DEVICES_COLLAPSED_KEY = "stationeers-sim-devices-collapsed";
+
 export function App() {
+  const [devicesCollapsed, setDevicesCollapsed] = useState<boolean>(() => {
+    try {
+      return localStorage.getItem(DEVICES_COLLAPSED_KEY) === "1";
+    } catch {
+      return false;
+    }
+  });
+
+  const toggleDevices = () =>
+    setDevicesCollapsed((c) => {
+      const next = !c;
+      try {
+        localStorage.setItem(DEVICES_COLLAPSED_KEY, next ? "1" : "0");
+      } catch {
+        // ignore storage errors
+      }
+      return next;
+    });
+
   return (
     <StoreProvider>
-      <div className="app">
+      <div className={"app" + (devicesCollapsed ? " app--devices-collapsed" : "")}>
         <EditorPane />
         <ConsolePane />
-        <DevicesPane />
+        <DevicesPane collapsed={devicesCollapsed} onToggle={toggleDevices} />
       </div>
     </StoreProvider>
   );

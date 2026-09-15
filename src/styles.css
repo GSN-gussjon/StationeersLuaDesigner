@@ -79,6 +79,59 @@ body {
   background: var(--bg-panel);
 }
 
+/* Collapsed Devices panel: shrink the grid column to a slim rail. */
+.app--devices-collapsed {
+  grid-template-columns: 1fr 40px;
+}
+.pane--devices-collapsed {
+  overflow: hidden;
+}
+.pane--devices-collapsed .pane-header {
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px 0;
+  justify-content: flex-start;
+}
+/* Vertical "Devices" label in the collapsed rail. */
+.pane--devices-collapsed__label {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  color: var(--text-dim);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+/* Left group in the expanded header (collapse button + title). */
+.pane-header__left {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Collapse / expand chevron button. */
+.pane-collapse-btn {
+  flex: 0 0 auto;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: transparent;
+  color: var(--text-dim);
+  cursor: pointer;
+  font-size: 10px;
+  line-height: 1;
+}
+.pane-collapse-btn:hover {
+  color: var(--text);
+  border-color: var(--accent-dim);
+}
+
 .code-editor {
   height: calc(100% - 40px);
   min-height: 0;
