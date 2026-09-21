@@ -99,10 +99,16 @@ export function drawElement(
 
   switch (el.type) {
     // flex/grid are designer-only layout containers rendered as panels.
+    // MK 21.09.2026 - tlo z fallbackiem na domyslny kolor schemy: generator
+    // pomija bg gdy = default, a parser czyta je jako brak; bez fallbacku
+    // kontener tracilby tlo po round-tripie Design->Script->Design.
     case "flex":
-    case "grid":
+    case "grid": {
+      drawRect(ctx, l, color(s.bg, "#0F172A"));
+      break;
+    }
     case "panel": {
-      if (s.bg) drawRect(ctx, l, color(s.bg));
+      drawRect(ctx, l, color(s.bg, "#1E293B"));
       break;
     }
     case "label": {
